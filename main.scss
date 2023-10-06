@@ -10,8 +10,10 @@
 :root {
   box-sizing: border-box;
   --main-clr: #00617a;
-  --gray-clr-1: #aaa;
+  --secondary-clr: #40889cf2;
+  --gray-clr-1: #ddd;
   --gray-clr-2: #ccc;
+  --gray-clr-3: #aaa;
 }
 
 body {
@@ -33,7 +35,7 @@ body {
 
   &__header {
     display: flex;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   &__controls {
@@ -50,6 +52,7 @@ body {
   &__headline {
     margin-left: auto;
     font-size: 1.2rem;
+    color: var(--secondary-clr);
   }
 
   &__todayBtn {
@@ -83,6 +86,9 @@ body {
     }
   }
 
+  &__body {
+    position: relative;
+  }
   &__weekdays {
     display: flex;
     text-align: left;
@@ -116,21 +122,25 @@ body {
     position: relative;
   }
 
+  &__cell:has(.event) {
+    cursor: pointer;
+  }
+
   .event-container {
     padding-inline: 6px;
   }
   .event {
     padding-inline: 6px;
     position: relative;
-    cursor: pointer;
   }
 
   .event--long {
-    position: relative;
-    cursor: pointer;
-    height: 1.6rem;
+    position: absolute;
+    width: 300%;
+    height: 1.4rem;
+    padding: 4px;
     margin-inline: -6px;
-    width: 100%;
+
     background: lightblue;
     border-radius: 8px;
     overflow: hidden;
@@ -141,16 +151,41 @@ body {
   .event__time {
     font-size: 0.7rem;
     font-weight: 500;
-    color: var(--gray-clr-1);
+    color: var(--gray-clr-3);
   }
 
   .event__title {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .event + .event {
     margin-top: 0.5rem;
   }
+
+  .list-panel {
+    position: absolute;
+    inset: 0;
+    border-top: 1px solid var(--main-clr);
+    background-color: white;
+    z-index: 99;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+  }
+
+  .list-panel.open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.date {
+  font-weight: 500;
+  background: white;
+  display: inline-block;
+  transform: translateY(-50%);
+  padding-right: 8px;
 }
 
 .currentDay {
@@ -159,6 +194,10 @@ body {
 
 .notCurrentMonth {
   color: var(--gray-clr-1);
+
+  .event__time {
+    color: inherit;
+  }
 }
 
 img {
@@ -169,13 +208,6 @@ img {
 
 .bookmarked {
   border-left: 2px solid blue;
-}
-
-.stretch {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .event-placeholder {

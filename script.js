@@ -1,11 +1,12 @@
-import { $ } from './helpers.js';
+import { $, $$ } from './helpers.js';
 
 const daysContainer = $('.calendar__daysContainer');
 const nextBtn = $('.calendar__nextBtn');
 const prevBtn = $('.calendar__prevBtn');
 const todayBtn = $('.calendar__todayBtm');
 const selectMonths = $('.calendar__selectMonths');
-const month = $('.month');
+const currentMonthEl = $('.date__currentMonth');
+const currentYearEl = $('.date__currentYear');
 
 const months = [
   'January',
@@ -58,6 +59,8 @@ function renderCalendar() {
 
   // display current Month
   selectMonths.selectedIndex = currentMonth;
+  currentMonthEl.textContent = months[currentMonth];
+  currentYearEl.textContent = currentYear;
 
   // update days html
   let days = '';
@@ -93,3 +96,26 @@ function renderCalendar() {
 }
 
 renderCalendar();
+
+const events = $$('.event');
+const listPanel = $('.list-panel');
+const closeBtn = $('.calendar__closeBtn');
+const calendarHeadline = $('.calendar__headline');
+
+const listHeadlineText =
+  'Details zu den Termin in der Liste einfach anklicken!';
+const calendarHeadlineText = 'Wählen Se einen Termin aus der Übersicht aus!';
+
+events.forEach((event) => {
+  event.addEventListener('click', () => {
+    listPanel.classList.add('open');
+    calendarHeadline.textContent = listHeadlineText;
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  if (listPanel.classList.contains('open')) {
+    listPanel.classList.remove('open');
+    calendarHeadline.textContent = calendarHeadlineText;
+  }
+});
