@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/78ee55c2b7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module" defer src="script.js"></script>
+    <title>Calendar</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calendar">
+        <header class="calendar__header">
+          <div class="calendar__controls">
+            <button class="calendar__prevBtn">
+              <i class="fa-solid fa-chevron-left" style="color: #aaaaaa"></i>
+            </button>
+            <button class="calendar__nextBtn">
+              <i class="fa-solid fa-chevron-right" style="color: #aaaaaa"></i>
+            </button>
+            <button class="calendar__todayBtn">Today</button>
+            <select
+              name=""
+              id="calendar__selectMonths"
+              class="calendar__selectMonths"
+            >
+              <option value="">January</option>
+              <option value="february">February</option>
+              <option value="march">March</option>
+              <option value="april">April</option>
+              <option value="may">May</option>
+              <option value="juni">Juni</option>
+              <option value="july">July</option>
+              <option value="august">August</option>
+              <option value="Septembre">September</option>
+              <option value="">October</option>
+              <option value="">November</option>
+              <option value="">December</option>
+            </select>
+          </div>
+          <h2 class="calendar__headline">
+            Wählen Se einen Termin aus der Übersicht aus!
+          </h2>
+          <button class="calendar__closeBtn">
+            <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff"></i>
+          </button>
+        </header>
+
+        <div class="calendar__body">
+          <div class="calendar__weekdays">
+            <div>SU</div>
+            <div>MO</div>
+            <div>TU</div>
+            <div>WE</div>
+            <div>TH</div>
+            <div>FR</div>
+            <div>SA</div>
+          </div>
+
+          <div class="calendar__daysContainer">
+            <div class="calendar__cell notCurrentMonth">
+              <span class="calendar__day">1</span>
+            </div>
+            <div class="calendar__cell notCurrentMonth">
+              <span class="calendar__day">2</span>
+            </div>
+            <div class="calendar__cell notCurrentMonth">
+              <span class="calendar__day">3</span>
+            </div>
+            <div class="calendar__cell notCurrentMonth">
+              <span class="calendar__day">4</span>
+              <div class="event-container">
+                <div class="event">
+                  <p class="event__time">
+                    <time>8 pm</time> - <time>10pm</time>
+                  </p>
+                  <h3 class="event__title">Restaurant Association Mixer</h3>
+                </div>
+              </div>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">1</span>
+              <div class="event-container">
+                <div class="event">
+                  <p class="event__time">
+                    <time>8 pm</time> - <time>10pm</time>
+                  </p>
+                  <h3 class="event__title">Restaurant Association Mixer</h3>
+                </div>
+              </div>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">2</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">3</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">4</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">5</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">6</span>
+              <div class="event-container">
+                <div class="event--long" style="background: orangered">
+                  <div class="stretch">
+                    <h3 class="event__title">Game Of thrones schauen</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">7</span>
+            </div>
+
+            <div class="calendar__cell">
+              <span class="calendar__day">8</span>
+              <div class="event-container">
+                <div class="event-placeholder"></div>
+                <div class="event--long">
+                  <div class="stretch">
+                    <h3 class="event__title">
+                      <i
+                        class="fa-solid fa-bookmark"
+                        style="color: #015cf9"
+                      ></i>
+
+                      Winter Renaissance Fair und so
+                    </h3>
+                  </div>
+                </div>
+
+                <div class="event">
+                  <p class="event__time">
+                    <time>9 pm</time> - <time>10 am</time>
+                  </p>
+                  <h3 class="event__title">Waffles with Friends</h3>
+                </div>
+
+                <div class="event">
+                  <p class="event__time">
+                    <time>12 pm</time> - <time>2 pm</time>
+                  </p>
+                  <h3 class="event__title">Crochet Club Lunch</h3>
+                </div>
+              </div>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">9</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">10</span>
+              <div class="event-container">
+                <div class="event-placeholder"></div>
+                <div class="event-placeholder"></div>
+
+                <div class="event">
+                  <p class="event__time">
+                    <time>10 am</time> - <time>2 pm</time>
+                  </p>
+                  <h3 class="event__title">WordPress for Beginners</h3>
+                </div>
+
+                <div class="event">
+                  <p class="event__time">
+                    <time>12 pm</time> - <time>2 pm</time>
+                  </p>
+                  <h3 class="event__title">Crochet Club Lunch</h3>
+                </div>
+              </div>
+            </div>
+            <div class="calendar__cell currentDay">
+              <span class="calendar__day">11</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">12</span>
+              <div class="event-container">
+                <div class="event bookmarked">
+                  <img
+                    src="https://picsum.photos/id/237/200/300
+									"
+                    alt=""
+                  />
+                  <p class="event__time">
+                    <i class="fa-solid fa-bookmark" style="color: #015cf9"></i>
+                    <time>9 pm</time> - <time>3 pm</time>
+                  </p>
+                  <h3 class="event__title">Parks and Rec Committee</h3>
+                </div>
+
+                <div class="event">
+                  <p class="event__time">
+                    <time>5 pm</time> - <time>7 pm</time>
+                  </p>
+                  <h3 class="event__title">Lil' Sebastian Fundraiser</h3>
+                </div>
+
+                <div class="event">
+                  <p class="event__time">
+                    <time>6 pm</time> - <time>11 pm</time>
+                  </p>
+                  <h3 class="event__title">JavaScript Session</h3>
+                </div>
+              </div>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">13</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">14</span>
+              <div class="event-container">
+                <div class="event">
+                  <p class="event__time">
+                    <time>8 pm</time> - <time>10 pm</time>
+                  </p>
+                  <h3 class="event__title">Restaurant Association Mixer</h3>
+                </div>
+              </div>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">15</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">16</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">17</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">18</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">19</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">20</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">21</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">22</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">23</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">24</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">25</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">26</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">27</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">28</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">29</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">30</span>
+            </div>
+            <div class="calendar__cell">
+              <span class="calendar__day">31</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
