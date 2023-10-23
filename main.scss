@@ -7,6 +7,11 @@
   box-sizing: inherit;
 }
 
+.data {
+  border: 2px dashed red;
+  padding: 2rem;
+  justify-self: start;
+}
 :root {
   box-sizing: border-box;
   --main-clr: #00617a;
@@ -17,10 +22,11 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   place-items: center;
   font-family: 'Roboto', sans-serif;
+  gap: 1rem;
 }
 
 .container {
@@ -29,6 +35,8 @@ body {
 .calendar {
   border: 5px solid var(--main-clr);
   width: calc(1000 / 16 * 1rem);
+  height: calc(800 / 16 * 1rem);
+  overflow: auto;
 
   border-radius: 16px;
   padding: 48px 32px 16px;
@@ -40,7 +48,12 @@ body {
 
   &__controls {
     display: flex;
+    align-items: center;
     gap: 14px;
+
+    .date__currentYear {
+      font-size: 1.2rem;
+    }
   }
 
   &__prevBtn,
@@ -58,13 +71,13 @@ body {
   &__todayBtn {
     border: 1px solid var(--gray-clr-2);
     background: transparent;
-    color: var(--gray-clr-1);
+    color: var(--gray-clr-3);
     border-radius: 4px;
     padding: 6px 8px;
   }
 
   &__selectMonths {
-    border: none;
+    border: 1px solid darkblue;
     font-size: 1.2rem;
     padding-inline: 4px;
   }
